@@ -4,10 +4,15 @@ import Section from './components/Section'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
 import Footer from './components/Footer'
+import TransitionOverlay from './components/TransitionOverlay'
+import { useSectionTransition } from './components/useSectionTransition'
 
 function App() {
+  const { overlay } = useSectionTransition()
+
   return (
     <div className="min-h-screen bg-white text-slate-900">
+      <TransitionOverlay show={overlay} />
       <Navbar />
       <Hero />
 
